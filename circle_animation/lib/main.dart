@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'animation_page.dart';
+import 'gird_page.dart';
 
 void main() => runApp(new MyApp());
 class MyApp extends StatelessWidget {
@@ -85,18 +86,18 @@ class _HomeContentState extends State<HomeContent> with TickerProviderStateMixin
                             shape: new CircleBorder(),
                             child: new Text("Click"),
                             onPressed: (){
-                                // setState(() {
-                                //     percentage = newPercentage;
-                                //     newPercentage += 10;
-                                //     if(newPercentage>100.0){
-                                //         percentage=0.0;
-                                //         newPercentage=0.0;
-                                //     }
-                                //     percentageAnimationController.forward(from: 0.0);
-                                // });
-                                Navigator.push(context, CupertinoPageRoute(
-                                  builder: (context) => new AnimationPage())
-                                );
+                                setState(() {
+                                    percentage = newPercentage;
+                                    newPercentage += 10;
+                                    if(newPercentage>100.0){
+                                        percentage=0.0;
+                                        newPercentage=0.0;
+                                    }
+                                    percentageAnimationController.forward(from: 0.0);
+                                });
+                                // Navigator.push(context, CupertinoPageRoute(
+                                //   builder: (context) => new GirdPage())
+                                // );
                             }),
                     ),
                 ),
